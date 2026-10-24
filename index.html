@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dhiyasri Apparels — Cotton knit, made in Tiruppur</title>
+<meta name="description" content="Dhiyasri Apparels, Tiruppur, Tamil Nadu, India. Cotton knit fabric and garments under one roof — single jersey, rib, interlock, fleece and terry, 110–440 GSM. Export ready (IEC).">
+<meta name="theme-color" content="#F6F3EC">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Outfit:wght@200;300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script type="importmap">
+{ "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js" } }
+</script>
+</head>
+<body>
+<a class="skip" href="#who">Skip to content</a>
+
+<!-- Wordmark symbol: lowercase wordmark with a hairline yarn passing through, forming one knit loop -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="yarnmark" viewBox="0 0 220 40" preserveAspectRatio="none">
+    <path d="M0 23 C 40 23, 70 21, 96 22 C 112 23, 114 8, 106 7 C 98 6, 99 23, 116 23 C 150 24, 185 21, 220 23" fill="none" stroke="currentColor" stroke-width="1" vector-effect="non-scaling-stroke" stroke-linecap="round"/>
+  </symbol>
+</svg>
+
+<header class="nav" id="top">
+  <a class="brand" href="#top" aria-label="Dhiyasri Apparels — home">
+    <span class="wordmark">
+      <span class="wm-text">dhiyasri</span>
+      <svg class="wm-yarn" aria-hidden="true"><use href="#yarnmark"/></svg>
+    </span>
+    <span class="wm-sub">Tiruppur, India</span>
+  </a>
+  <nav aria-label="Primary">
+    <ul>
+      <li><a href="#who">About</a></li>
+      <li><a href="#knits">Knits</a></li>
+      <li><a href="#process">Process</a></li>
+      <li><a href="#terms">MOQ</a></li>
+    </ul>
+  </nav>
+  <a class="btn btn-sm" href="#quote">Request a quote</a>
+</header>
+
+<main>
+  <!-- HERO — fabric to garment, told by scroll -->
+  <section class="hero" id="hero" aria-label="Cotton knit, made in Tiruppur">
+    <div class="hero-sticky">
+      <div class="hero-canvas" id="heroStage">
+        <canvas id="heroCanvas" aria-label="Interactive 3D model of knitted cotton jersey. It starts on a single loop, zooms out to a fabric swatch, then forms a T-shirt as you scroll. Drag to rotate." role="img"></canvas>
+        <div class="knit-fallback" aria-hidden="true"></div>
+      </div>
+
+      <div class="hero-scrim" aria-hidden="true"></div>
+      <div class="hero-copy">
+        <p class="label">[00 — Dhiyasri Apparels]</p>
+        <h1 class="display">Cotton knit, made in Tiruppur. <span class="dim">From yarn to finished garment.</span></h1>
+        <div class="hero-actions">
+          <a class="btn" href="#quote">Request a quote</a>
+          <a class="link" href="#knits">Explore knits <span aria-hidden="true">↓</span></a>
+        </div>
+      </div>
+
+      <ol class="stages" aria-label="What you are looking at">
+        <li data-stage="0" class="is-on" aria-current="step"><span class="dot" aria-hidden="true"></span><span class="st-k">Loop</span><span class="st-v">One knitted stitch</span></li>
+        <li data-stage="1"><span class="dot" aria-hidden="true"></span><span class="st-k">Fabric</span><span class="st-v">Loops become jersey</span></li>
+        <li data-stage="2"><span class="dot" aria-hidden="true"></span><span class="st-k">Garment</span><span class="st-v">Jersey becomes a tee</span></li>
+      </ol>
+      <p class="hero-hint label" aria-hidden="true"><span class="only-fine">[Drag to rotate · scroll to follow the yarn]</span><span class="only-coarse">[Scroll to follow the yarn]</span></p>
+      <p class="sr-only" id="stageLive" aria-live="polite"></p>
+    </div>
+  </section>
+
+  <div class="flow" id="flow">
+    <!-- The single yarn line that threads the page and draws the graphics -->
+    <svg class="yarn" id="yarn" aria-hidden="true" focusable="false">
+      <path class="yarn-ghost" d=""/>
+      <path class="yarn-glow" d=""/>
+      <path class="yarn-glow yarn-glow2" d=""/>
+      <path class="yarn-line" d=""/>
+      <g class="yarn-dots"></g>
+    </svg>
+
+    <!-- 01 WHO WE ARE -->
+    <section class="sec who" id="who" aria-labelledby="who-h">
+      <span class="anchor" data-a="v" data-dot></span>
+      <div class="wrap">
+        <p class="label">[01 — Origin]</p>
+        <div class="who-grid">
+          <div>
+            <h2 class="display h2" id="who-h">Fabric to finished garment, <span class="dim">under one roof.</span></h2>
+            <p class="lead">Dhiyasri Apparels knits, dyes, cuts and stitches cotton in Tiruppur, Tamil Nadu — India’s knitwear town. One team carries your order from yarn to packed garment.</p>
+            <dl class="facts">
+              <div><dt>Location</dt><dd>Tiruppur, Tamil Nadu, India</dd></div>
+              <div><dt>Founded</dt><dd><span class="ph">[since YEAR — to confirm]</span></dd></div>
+              <div><dt>Export</dt><dd>IEC holder (Importer Exporter Code)</dd></div>
+              <div><dt>Own label</dt><dd>Pekaboo Clothing</dd></div>
+            </dl>
+          </div>
+          <div class="who-num">
+            <p class="hero-num" aria-label="31 years of knitting expertise">31<span class="dim">yrs</span></p>
+            <p class="num-cap">of knitting expertise</p>
+          </div>
+        </div>
+
+        <figure class="scale years" aria-label="Timeline: 31 years of knitting, one tick per year">
+          <div class="scale-track" id="yearTicks">
+            <span class="anchor" data-a="h" data-dot style="left:0"></span>
+            <span class="anchor" data-a="h" data-dot style="left:100%"></span>
+          </div>
+          <figcaption class="scale-legend"><span class="ph">[since YEAR — to confirm]</span><span>One tick = one year</span><span>Today</span></figcaption>
+        </figure>
+
+        <div class="photos">
+          <figure class="photo-ph"><span>[Factory photo — to be supplied]</span><figcaption>Knitting floor</figcaption></figure>
+          <figure class="photo-ph"><span>[Factory photo — to be supplied]</span><figcaption>Stitching line</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02 KNITS -->
+    <section class="sec knits" id="knits" aria-labelledby="knits-h">
+      <div class="wrap">
+        <p class="label">[02 — Knits]</p>
+        <h2 class="display h2" id="knits-h">Five knit structures. <span class="dim">One cotton hand.</span></h2>
+
+        <div class="knit-ui">
+          <div class="viewer glass" id="viewer">
+            <canvas id="knitCanvas" role="img" aria-label="3D close-up of the selected knit structure. Drag to rotate."></canvas>
+            <div class="knit-fallback" aria-hidden="true"></div>
+            <p class="viewer-tag label" id="viewerTag">[Single jersey]</p>
+            <p class="viewer-hint label" aria-hidden="true">[Drag to rotate]</p>
+          </div>
+
+          <div class="knit-list" role="group" aria-label="Choose a knit structure">
+            <button type="button" class="knit-btn" data-knit="jersey" aria-pressed="true"><span class="kb-i">01</span><span class="kb-n">Single jersey</span><span class="kb-d">Plain face loops, one needle bed. Light and smooth.</span></button>
+            <button type="button" class="knit-btn" data-knit="rib" aria-pressed="false"><span class="kb-i">02</span><span class="kb-n">Rib</span><span class="kb-d">Face and back wales alternate. Stretches across the width.</span></button>
+            <button type="button" class="knit-btn" data-knit="interlock" aria-pressed="false"><span class="kb-i">03</span><span class="kb-n">Interlock</span><span class="kb-d">Two jersey layers knitted together. Smooth on both faces.</span></button>
+            <button type="button" class="knit-btn" data-knit="fleece" aria-pressed="false"><span class="kb-i">04</span><span class="kb-n">Fleece</span><span class="kb-d">Jersey face, soft brushed back yarn. Warm and lofty.</span></button>
+            <button type="button" class="knit-btn" data-knit="terry" aria-pressed="false"><span class="kb-i">05</span><span class="kb-n">Terry</span><span class="kb-d">Extra pile loops stand out from the ground. Absorbent.</span></button>
+          </div>
+        </div>
+
+        <div class="gsm">
+          <p class="hero-num gsm-num" aria-label="110 to 440 GSM">110–440<span class="dim">GSM</span></p>
+          <p class="num-cap">Fabric weight range, grams per square metre</p>
+          <figure class="scale gsm-scale" aria-label="Scale from 0 to 500 GSM; our range spans 110 to 440">
+            <div class="scale-track">
+              <span class="tick t" style="left:0%"><i>0</i></span>
+              <span class="tick t" style="left:20%"><i>100</i></span>
+              <span class="tick t" style="left:40%"><i>200</i></span>
+              <span class="tick t" style="left:60%"><i>300</i></span>
+              <span class="tick t" style="left:80%"><i>400</i></span>
+              <span class="tick t" style="left:100%"><i>500</i></span>
+              <span class="anchor" data-a="h" data-dot style="left:22%"><b class="end-lab">110</b></span>
+              <span class="anchor" data-a="h" data-dot style="left:88%"><b class="end-lab">440</b></span>
+            </div>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03 PROCESS -->
+    <section class="sec process" id="process" aria-labelledby="process-h">
+      <div class="wrap">
+        <p class="label">[03 — Process]</p>
+        <h2 class="display h2" id="process-h">Yarn in. <span class="dim">Garment out.</span></h2>
+        <ol class="steps">
+          <li class="step"><span class="anchor" data-a="v" data-dot data-loop></span><p class="label">[Step 1]</p><h3>Knitting</h3><p>Cotton yarn is knitted into fabric — jersey, rib, interlock, fleece or terry.</p></li>
+          <li class="step"><span class="anchor" data-a="v" data-dot data-loop></span><p class="label">[Step 2]</p><h3>Dyeing</h3><p>Greige fabric is dyed and processed to the shade you approve.</p></li>
+          <li class="step"><span class="anchor" data-a="v" data-dot data-loop></span><p class="label">[Step 3]</p><h3>Cutting</h3><p>Fabric is laid and cut into panels to your pattern.</p></li>
+          <li class="step"><span class="anchor" data-a="v" data-dot data-loop></span><p class="label">[Step 4]</p><h3>Stitching</h3><p>Panels are sewn into the finished style.</p></li>
+          <li class="step"><span class="anchor" data-a="v" data-dot data-loop></span><p class="label">[Step 5]</p><h3>Finishing</h3><p>Garments are checked, pressed, labelled and packed.</p></li>
+        </ol>
+
+        <div class="made glass">
+          <p class="label">[What we make]</p>
+          <ul class="chips">
+            <li>T-shirts</li><li>Hoodies</li><li>Track pants</li><li>Uniforms</li><li>Private label</li>
+          </ul>
+          <p class="made-note">Also home to our own label, <em>Pekaboo Clothing</em>.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04 BRANDS -->
+    <section class="sec brands" id="brands" aria-labelledby="brands-h">
+      <div class="wrap">
+        <p class="label">[04 — Produced for]</p>
+        <h2 class="display h2" id="brands-h">Brands we’ve produced for.</h2>
+        <ul class="brand-list">
+          <li><span class="anchor" data-a="v" data-dot></span>WROGN</li>
+          <li>Puma</li>
+          <li>Wrangler</li>
+        </ul>
+        <p class="fine">Listed as text only. Names and trademarks belong to their owners.</p>
+      </div>
+    </section>
+
+    <!-- 05 TERMS -->
+    <section class="sec terms" id="terms" aria-labelledby="terms-h">
+      <div class="wrap">
+        <p class="label">[05 — Terms]</p>
+        <h2 class="display h2" id="terms-h">Minimums that fit a first order. <span class="dim">Ready to ship abroad.</span></h2>
+        <div class="cards">
+          <article class="card glass">
+            <p class="label">[Fabric MOQ]</p>
+            <p class="card-num">250<span class="dim">kg</span></p>
+            <p class="card-cap">Minimum per fabric order</p>
+          </article>
+          <article class="card glass">
+            <p class="label">[T-shirt MOQ]</p>
+            <p class="card-num">500<span class="dim">pcs</span></p>
+            <p class="card-cap">Minimum per T-shirt order</p>
+          </article>
+          <article class="card glass">
+            <p class="label">[Lead time]</p>
+            <p class="card-num">14–30<span class="dim">days</span></p>
+            <p class="card-cap"><span class="ph">[to confirm]</span> Placeholder range</p>
+          </article>
+          <article class="card glass card-export">
+            <p class="label">[Export ready]</p>
+            <p class="card-num sm">IEC<span class="dim">holder</span></p>
+            <p class="card-cap">We supply brands, D2C labels, garment factories, private label buyers and wholesalers worldwide.</p>
+          </article>
+        </div>
+
+        <figure class="scale lead-scale" aria-label="Lead time scale in days, 0 to 30. Window 14 to 30 days, to be confirmed.">
+          <div class="scale-track">
+            <span class="tick t" style="left:0%"><i>Day 0</i></span>
+            <span class="tick t" style="left:100%"><i>Day 30</i></span>
+            <span class="window" style="left:46.67%;right:0"></span>
+            <span class="anchor" data-a="h" style="left:0%"></span>
+            <span class="anchor" data-a="h" data-dot style="left:46.67%"><b class="end-lab">14</b></span>
+            <span class="anchor" data-a="h" data-dot style="left:100%"><b class="end-lab">30</b></span>
+          </div>
+          <figcaption class="scale-legend"><span>Order confirmed</span><span><span class="ph">[to confirm]</span> Dispatch window</span></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- 06 QUOTE -->
+    <section class="sec quote" id="quote" aria-labelledby="quote-h">
+      <div class="wrap quote-grid">
+        <div>
+          <p class="label">[06 — Quote]</p>
+          <h2 class="display h2" id="quote-h">Request a quote. <span class="dim">Tell us the fabric or the garment.</span></h2>
+          <dl class="facts contact">
+            <div><dt>Contact</dt><dd><span class="ph">[email / WhatsApp to confirm]</span></dd></div>
+            <div><dt>LinkedIn</dt><dd><a class="link" href="https://www.linkedin.com/in/srinivasan-natarajan-b3731780/" target="_blank" rel="noopener">Srinivasan Natarajan <span aria-hidden="true">↗</span></a></dd></div>
+            <div><dt>Location</dt><dd>Tiruppur, Tamil Nadu, India</dd></div>
+          </dl>
+        </div>
+        <form class="form glass" id="quoteForm" novalidate>
+          <div class="field"><label for="f-name">Name</label><input id="f-name" name="name" autocomplete="name" required></div>
+          <div class="field"><label for="f-company">Company</label><input id="f-company" name="company" autocomplete="organization"></div>
+          <div class="field"><label for="f-country">Country</label><input id="f-country" name="country" autocomplete="country-name"></div>
+          <div class="field"><label for="f-product">Product</label>
+            <select id="f-product" name="product">
+              <option value="">Select…</option>
+              <optgroup label="Fabric"><option>Single jersey</option><option>Rib</option><option>Interlock</option><option>Fleece</option><option>Terry</option></optgroup>
+              <optgroup label="Garment"><option>T-shirts</option><option>Hoodies</option><option>Track pants</option><option>Uniforms</option><option>Private label</option></optgroup>
+            </select></div>
+          <div class="field"><label for="f-qty">Quantity</label><input id="f-qty" name="quantity" placeholder="e.g. 500 pcs or 250 kg"></div>
+          <button class="btn btn-full" type="submit"><span class="anchor" data-a="v" data-dot></span>Request a quote</button>
+          <p class="form-status" id="formStatus" role="status"></p>
+        </form>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-grid">
+    <div class="foot-brand">
+      <span class="wordmark big"><span class="wm-text">dhiyasri</span><svg class="wm-yarn" aria-hidden="true"><use href="#yarnmark"/></svg></span>
+      <span class="wm-sub">Tiruppur, India</span>
+    </div>
+    <p class="fine">Dhiyasri Apparels · Cotton knit fabric &amp; garments · IEC holder · Own label: Pekaboo Clothing</p>
+    <p class="fine"><a class="link" href="https://www.linkedin.com/in/srinivasan-natarajan-b3731780/" target="_blank" rel="noopener">LinkedIn ↗</a> · <span class="ph">[email / WhatsApp to confirm]</span></p>
+  </div>
+</footer>
+
+<script src="fallback.js"></script>
+<script type="module" src="main.js"></script>
+</body>
+</html>
