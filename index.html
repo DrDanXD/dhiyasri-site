@@ -5,257 +5,408 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Dhiyasri Apparels — Cotton knit, made in Tiruppur</title>
 <meta name="description" content="Dhiyasri Apparels, Tiruppur, Tamil Nadu, India. Cotton knit fabric and garments under one roof — single jersey, rib, interlock, fleece and terry, 110–440 GSM. Export ready (IEC).">
-<meta name="theme-color" content="#F6F3EC">
+<meta name="theme-color" content="#0E0F12">
+<meta name="color-scheme" content="dark">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%276%27 fill=%27%230E0F12%27/%3E%3Cpath d=%27M9 9l7 14 7-14%27 fill=%27none%27 stroke=%27%23EDEAE3%27 stroke-width=%272.4%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27/%3E%3Cpath d=%27M4 22h24%27 stroke=%27%238E98FF%27 stroke-width=%271.6%27 stroke-dasharray=%273 2%27/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Outfit:wght@200;300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
-<script type="importmap">
-{ "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js" } }
-</script>
 </head>
 <body>
 <a class="skip" href="#who">Skip to content</a>
 
-<!-- Wordmark symbol: lowercase wordmark with a hairline yarn passing through, forming one knit loop -->
-<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<!-- ============================================================
+     Shared SVG library: wordmark yarn + knit stitch patterns.
+     Each pattern draws the real face or back of that knit structure.
+     ============================================================ -->
+<svg class="defs" width="0" height="0" aria-hidden="true" focusable="false">
   <symbol id="yarnmark" viewBox="0 0 220 40" preserveAspectRatio="none">
     <path d="M0 23 C 40 23, 70 21, 96 22 C 112 23, 114 8, 106 7 C 98 6, 99 23, 116 23 C 150 24, 185 21, 220 23" fill="none" stroke="currentColor" stroke-width="1" vector-effect="non-scaling-stroke" stroke-linecap="round"/>
   </symbol>
+  <defs>
+    <!-- yarn shading: lit cotton on a dark ground -->
+    <radialGradient id="g-yarn" cx="38%" cy="32%" r="78%">
+      <stop offset="0" stop-color="#EDE8DE"/><stop offset=".5" stop-color="#B8B2A6"/><stop offset="1" stop-color="#4E4B45"/>
+    </radialGradient>
+    <radialGradient id="g-yarn-b" cx="38%" cy="32%" r="78%">
+      <stop offset="0" stop-color="#D6D2C9"/><stop offset=".55" stop-color="#9F9A90"/><stop offset="1" stop-color="#3F3D39"/>
+    </radialGradient>
+    <radialGradient id="g-yarn-dim" cx="40%" cy="30%" r="80%">
+      <stop offset="0" stop-color="#8F8A80"/><stop offset="1" stop-color="#34322E"/>
+    </radialGradient>
+    <linearGradient id="g-purl" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#E4DFD4"/><stop offset=".6" stop-color="#A49E93"/><stop offset="1" stop-color="#4A4741"/>
+    </linearGradient>
+    <radialGradient id="g-hero" cx="36%" cy="30%" r="80%">
+      <stop offset="0" stop-color="#DCD7CC"/><stop offset=".45" stop-color="#9E988C"/><stop offset=".85" stop-color="#3D3B37"/><stop offset="1" stop-color="#232327"/>
+    </radialGradient>
+
+    <!-- Single jersey FACE: columns of V-shaped loops (two legs per stitch) -->
+    <pattern id="p-jf" width="24" height="20" patternUnits="userSpaceOnUse"><rect width="24" height="20" fill="#101115"/><ellipse cx="-17.5" cy="-10" rx="5" ry="12.5" transform="rotate(-30 -17.5 -10)" fill="url(#g-yarn)" stroke="#0A0B0E" stroke-width="0.9"/><ellipse cx="-6.5" cy="-10" rx="5" ry="12.5" transform="rotate(30 -6.5 -10)" fill="url(#g-yarn)" stroke="#0A0B0E" stroke-width="0.9"/><ellipse cx="6.5" cy="-10" rx="5" ry="12.5" transform="rotate(-30 6.5 -10)" fill="url(#g-yarn)" stroke="#0A0B0E" stroke-width="0.9"/><ellipse cx="17.5" cy="-10" rx="5" ry="12.5" transform="rotate(30 17.5 -10)" fill="url(#g-yarn)" stroke="#0A0B0E" stroke-width="0.9"/><ellipse cx="30.5" cy="-10" rx="5" ry="12.5" transform="rotate(-30 30.5 -10)" fill="url(#g-yarn)" stroke="#0A0B0E" stroke-width="0.9"/><ellipse cx="41.5" cy="-10" rx="5" ry="12.5" transform="rotate(30 41.5 -10)" fill="url(#g-yarn)" stroke="#0A0B0E" stroke-width="0.9"/><ellipse cx="-17.5" cy="10" rx="5" ry="12.5" transform="rotate(-30 -17.5 10)" fill="url(#g-yarn)" stroke="#0A0B0E" stroke-width="0.9"/><ellipse cx="-6.5" cy="10" rx="5" ry="12.5" transform="rotate(30 -6.5 10)" fill="url(#g-yarn)" stroke="#0A0B0E" stroke-width="0.9"/><ellipse cx="6.5" cy="10" rx="5" ry="12.5" transform="rotate(-30 6.5 10)" fill="url(#g-yarn)" stroke="#0A0B0E" stroke-width="0.9"/><ellipse cx="17.5" cy="10" rx="5" ry="12.5" transform="rotate(30 17.5 10)" fill="url(#g-yarn)" stroke="#0A0B0E" stroke-width="0.9"/><ellipse cx="30.5" cy="10" rx="5" ry="12.5" transform="rotate(-30 30.5 10)" fill="url(#g-yarn)" stroke="#0A0B0E" stroke-width="0.9"/><ellipse cx="41.5" cy="10" rx="5" ry="12.5" transform="rotate(30 41.5 10)" fill="url(#g-yarn)" stroke="#0A0B0E" stroke-width="0.9"/><ellipse cx="-17.5" cy="30" rx="5" ry="12.5" transform="rotate(-30 -17.5 30)" fill="url(#g-yarn)" stroke="#0A0B0E" stroke-width="0.9"/><ellipse cx="-6.5" cy="30" rx="5" ry="12.5" transform="rotate(30 -6.5 30)" fill="url(#g-yarn)" stroke="#0A0B0E" stroke-width="0.9"/><ellipse cx="6.5" cy="30" rx="5" ry="12.5" transform="rotate(-30 6.5 30)" fill="url(#g-yarn)" stroke="#0A0B0E" stroke-width="0.9"/><ellipse cx="17.5" cy="30" rx="5" ry="12.5" transform="rotate(30 17.5 30)" fill="url(#g-yarn)" stroke="#0A0B0E" stroke-width="0.9"/><ellipse cx="30.5" cy="30" rx="5" ry="12.5" transform="rotate(-30 30.5 30)" fill="url(#g-yarn)" stroke="#0A0B0E" stroke-width="0.9"/><ellipse cx="41.5" cy="30" rx="5" ry="12.5" transform="rotate(30 41.5 30)" fill="url(#g-yarn)" stroke="#0A0B0E" stroke-width="0.9"/></pattern>
+    <!-- Single jersey BACK: purl bumps, rows of half-loops offset by half a stitch -->
+    <pattern id="p-jb" width="20" height="14" patternUnits="userSpaceOnUse">
+      <rect width="20" height="14" fill="#101115"/>
+      <ellipse cx="10" cy="4.2" rx="8.4" ry="3.7" fill="url(#g-purl)"/>
+      <ellipse cx="0" cy="11.2" rx="8.4" ry="3.7" fill="url(#g-purl)"/>
+      <ellipse cx="20" cy="11.2" rx="8.4" ry="3.7" fill="url(#g-purl)"/>
+    </pattern>
+    <!-- Rib FACE: raised knit wales alternate with recessed purl wales -->
+    <pattern id="p-rf" width="34" height="20" patternUnits="userSpaceOnUse"><rect width="34" height="20" fill="#0C0D10"/><ellipse cx="28.5" cy="5" rx="4.4" ry="2.8" fill="url(#g-yarn-dim)"/><ellipse cx="28.5" cy="15" rx="4.4" ry="2.8" fill="url(#g-yarn-dim)"/><ellipse cx="-27.5" cy="-10" rx="5" ry="12.5" transform="rotate(-30 -27.5 -10)" fill="url(#g-yarn)" stroke="#0A0B0E" stroke-width="0.9"/><ellipse cx="-16.5" cy="-10" rx="5" ry="12.5" transform="rotate(30 -16.5 -10)" fill="url(#g-yarn)" stroke="#0A0B0E" stroke-width="0.9"/><ellipse cx="6.5" cy="-10" rx="5" ry="12.5" transform="rotate(-30 6.5 -10)" fill="url(#g-yarn)" stroke="#0A0B0E" stroke-width="0.9"/><ellipse cx="17.5" cy="-10" rx="5" ry="12.5" transform="rotate(30 17.5 -10)" fill="url(#g-yarn)" stroke="#0A0B0E" stroke-width="0.9"/><ellipse cx="40.5" cy="-10" rx="5" ry="12.5" transform="rotate(-30 40.5 -10)" fill="url(#g-yarn)" stroke="#0A0B0E" stroke-width="0.9"/><ellipse cx="51.5" cy="-10" rx="5" ry="12.5" transform="rotate(30 51.5 -10)" fill="url(#g-yarn)" stroke="#0A0B0E" stroke-width="0.9"/><ellipse cx="-27.5" cy="10" rx="5" ry="12.5" transform="rotate(-30 -27.5 10)" fill="url(#g-yarn)" stroke="#0A0B0E" stroke-width="0.9"/><ellipse cx="-16.5" cy="10" rx="5" ry="12.5" transform="rotate(30 -16.5 10)" fill="url(#g-yarn)" stroke="#0A0B0E" stroke-width="0.9"/><ellipse cx="6.5" cy="10" rx="5" ry="12.5" transform="rotate(-30 6.5 10)" fill="url(#g-yarn)" stroke="#0A0B0E" stroke-width="0.9"/><ellipse cx="17.5" cy="10" rx="5" ry="12.5" transform="rotate(30 17.5 10)" fill="url(#g-yarn)" stroke="#0A0B0E" stroke-width="0.9"/><ellipse cx="40.5" cy="10" rx="5" ry="12.5" transform="rotate(-30 40.5 10)" fill="url(#g-yarn)" stroke="#0A0B0E" stroke-width="0.9"/><ellipse cx="51.5" cy="10" rx="5" ry="12.5" transform="rotate(30 51.5 10)" fill="url(#g-yarn)" stroke="#0A0B0E" stroke-width="0.9"/><ellipse cx="-27.5" cy="30" rx="5" ry="12.5" transform="rotate(-30 -27.5 30)" fill="url(#g-yarn)" stroke="#0A0B0E" stroke-width="0.9"/><ellipse cx="-16.5" cy="30" rx="5" ry="12.5" transform="rotate(30 -16.5 30)" fill="url(#g-yarn)" stroke="#0A0B0E" stroke-width="0.9"/><ellipse cx="6.5" cy="30" rx="5" ry="12.5" transform="rotate(-30 6.5 30)" fill="url(#g-yarn)" stroke="#0A0B0E" stroke-width="0.9"/><ellipse cx="17.5" cy="30" rx="5" ry="12.5" transform="rotate(30 17.5 30)" fill="url(#g-yarn)" stroke="#0A0B0E" stroke-width="0.9"/><ellipse cx="40.5" cy="30" rx="5" ry="12.5" transform="rotate(-30 40.5 30)" fill="url(#g-yarn)" stroke="#0A0B0E" stroke-width="0.9"/><ellipse cx="51.5" cy="30" rx="5" ry="12.5" transform="rotate(30 51.5 30)" fill="url(#g-yarn)" stroke="#0A0B0E" stroke-width="0.9"/></pattern>
+    <!-- Rib BACK: the same alternation, shifted — rib reads the same on both sides -->
+    <pattern id="p-rb" width="34" height="20" patternUnits="userSpaceOnUse" patternTransform="translate(17 0)"><rect width="34" height="20" fill="#0C0D10"/><ellipse cx="28.5" cy="5" rx="4.4" ry="2.8" fill="url(#g-yarn-dim)"/><ellipse cx="28.5" cy="15" rx="4.4" ry="2.8" fill="url(#g-yarn-dim)"/><ellipse cx="-27.5" cy="-10" rx="5" ry="12.5" transform="rotate(-30 -27.5 -10)" fill="url(#g-yarn-b)" stroke="#0A0B0E" stroke-width="0.9"/><ellipse cx="-16.5" cy="-10" rx="5" ry="12.5" transform="rotate(30 -16.5 -10)" fill="url(#g-yarn-b)" stroke="#0A0B0E" stroke-width="0.9"/><ellipse cx="6.5" cy="-10" rx="5" ry="12.5" transform="rotate(-30 6.5 -10)" fill="url(#g-yarn-b)" stroke="#0A0B0E" stroke-width="0.9"/><ellipse cx="17.5" cy="-10" rx="5" ry="12.5" transform="rotate(30 17.5 -10)" fill="url(#g-yarn-b)" stroke="#0A0B0E" stroke-width="0.9"/><ellipse cx="40.5" cy="-10" rx="5" ry="12.5" transform="rotate(-30 40.5 -10)" fill="url(#g-yarn-b)" stroke="#0A0B0E" stroke-width="0.9"/><ellipse cx="51.5" cy="-10" rx="5" ry="12.5" transform="rotate(30 51.5 -10)" fill="url(#g-yarn-b)" stroke="#0A0B0E" stroke-width="0.9"/><ellipse cx="-27.5" cy="10" rx="5" ry="12.5" transform="rotate(-30 -27.5 10)" fill="url(#g-yarn-b)" stroke="#0A0B0E" stroke-width="0.9"/><ellipse cx="-16.5" cy="10" rx="5" ry="12.5" transform="rotate(30 -16.5 10)" fill="url(#g-yarn-b)" stroke="#0A0B0E" stroke-width="0.9"/><ellipse cx="6.5" cy="10" rx="5" ry="12.5" transform="rotate(-30 6.5 10)" fill="url(#g-yarn-b)" stroke="#0A0B0E" stroke-width="0.9"/><ellipse cx="17.5" cy="10" rx="5" ry="12.5" transform="rotate(30 17.5 10)" fill="url(#g-yarn-b)" stroke="#0A0B0E" stroke-width="0.9"/><ellipse cx="40.5" cy="10" rx="5" ry="12.5" transform="rotate(-30 40.5 10)" fill="url(#g-yarn-b)" stroke="#0A0B0E" stroke-width="0.9"/><ellipse cx="51.5" cy="10" rx="5" ry="12.5" transform="rotate(30 51.5 10)" fill="url(#g-yarn-b)" stroke="#0A0B0E" stroke-width="0.9"/><ellipse cx="-27.5" cy="30" rx="5" ry="12.5" transform="rotate(-30 -27.5 30)" fill="url(#g-yarn-b)" stroke="#0A0B0E" stroke-width="0.9"/><ellipse cx="-16.5" cy="30" rx="5" ry="12.5" transform="rotate(30 -16.5 30)" fill="url(#g-yarn-b)" stroke="#0A0B0E" stroke-width="0.9"/><ellipse cx="6.5" cy="30" rx="5" ry="12.5" transform="rotate(-30 6.5 30)" fill="url(#g-yarn-b)" stroke="#0A0B0E" stroke-width="0.9"/><ellipse cx="17.5" cy="30" rx="5" ry="12.5" transform="rotate(30 17.5 30)" fill="url(#g-yarn-b)" stroke="#0A0B0E" stroke-width="0.9"/><ellipse cx="40.5" cy="30" rx="5" ry="12.5" transform="rotate(-30 40.5 30)" fill="url(#g-yarn-b)" stroke="#0A0B0E" stroke-width="0.9"/><ellipse cx="51.5" cy="30" rx="5" ry="12.5" transform="rotate(30 51.5 30)" fill="url(#g-yarn-b)" stroke="#0A0B0E" stroke-width="0.9"/></pattern>
+    <!-- Interlock FACE: fine, tight V loops -->
+    <pattern id="p-if" width="14.4" height="12" patternUnits="userSpaceOnUse"><rect width="14.4" height="12" fill="#101115"/><ellipse cx="-10.5" cy="-6" rx="3" ry="7.5" transform="rotate(-30 -10.5 -6)" fill="url(#g-yarn)" stroke="#0A0B0E" stroke-width="0.6"/><ellipse cx="-3.9" cy="-6" rx="3" ry="7.5" transform="rotate(30 -3.9 -6)" fill="url(#g-yarn)" stroke="#0A0B0E" stroke-width="0.6"/><ellipse cx="3.9" cy="-6" rx="3" ry="7.5" transform="rotate(-30 3.9 -6)" fill="url(#g-yarn)" stroke="#0A0B0E" stroke-width="0.6"/><ellipse cx="10.5" cy="-6" rx="3" ry="7.5" transform="rotate(30 10.5 -6)" fill="url(#g-yarn)" stroke="#0A0B0E" stroke-width="0.6"/><ellipse cx="18.3" cy="-6" rx="3" ry="7.5" transform="rotate(-30 18.3 -6)" fill="url(#g-yarn)" stroke="#0A0B0E" stroke-width="0.6"/><ellipse cx="24.9" cy="-6" rx="3" ry="7.5" transform="rotate(30 24.9 -6)" fill="url(#g-yarn)" stroke="#0A0B0E" stroke-width="0.6"/><ellipse cx="-10.5" cy="6" rx="3" ry="7.5" transform="rotate(-30 -10.5 6)" fill="url(#g-yarn)" stroke="#0A0B0E" stroke-width="0.6"/><ellipse cx="-3.9" cy="6" rx="3" ry="7.5" transform="rotate(30 -3.9 6)" fill="url(#g-yarn)" stroke="#0A0B0E" stroke-width="0.6"/><ellipse cx="3.9" cy="6" rx="3" ry="7.5" transform="rotate(-30 3.9 6)" fill="url(#g-yarn)" stroke="#0A0B0E" stroke-width="0.6"/><ellipse cx="10.5" cy="6" rx="3" ry="7.5" transform="rotate(30 10.5 6)" fill="url(#g-yarn)" stroke="#0A0B0E" stroke-width="0.6"/><ellipse cx="18.3" cy="6" rx="3" ry="7.5" transform="rotate(-30 18.3 6)" fill="url(#g-yarn)" stroke="#0A0B0E" stroke-width="0.6"/><ellipse cx="24.9" cy="6" rx="3" ry="7.5" transform="rotate(30 24.9 6)" fill="url(#g-yarn)" stroke="#0A0B0E" stroke-width="0.6"/><ellipse cx="-10.5" cy="18" rx="3" ry="7.5" transform="rotate(-30 -10.5 18)" fill="url(#g-yarn)" stroke="#0A0B0E" stroke-width="0.6"/><ellipse cx="-3.9" cy="18" rx="3" ry="7.5" transform="rotate(30 -3.9 18)" fill="url(#g-yarn)" stroke="#0A0B0E" stroke-width="0.6"/><ellipse cx="3.9" cy="18" rx="3" ry="7.5" transform="rotate(-30 3.9 18)" fill="url(#g-yarn)" stroke="#0A0B0E" stroke-width="0.6"/><ellipse cx="10.5" cy="18" rx="3" ry="7.5" transform="rotate(30 10.5 18)" fill="url(#g-yarn)" stroke="#0A0B0E" stroke-width="0.6"/><ellipse cx="18.3" cy="18" rx="3" ry="7.5" transform="rotate(-30 18.3 18)" fill="url(#g-yarn)" stroke="#0A0B0E" stroke-width="0.6"/><ellipse cx="24.9" cy="18" rx="3" ry="7.5" transform="rotate(30 24.9 18)" fill="url(#g-yarn)" stroke="#0A0B0E" stroke-width="0.6"/></pattern>
+    <!-- Interlock BACK: also smooth V loops — interlock has no purl side -->
+    <pattern id="p-ib" width="14.4" height="12" patternUnits="userSpaceOnUse" patternTransform="translate(7.2 6)"><rect width="14.4" height="12" fill="#101115"/><ellipse cx="-10.5" cy="-6" rx="3" ry="7.5" transform="rotate(-30 -10.5 -6)" fill="url(#g-yarn-b)" stroke="#0A0B0E" stroke-width="0.6"/><ellipse cx="-3.9" cy="-6" rx="3" ry="7.5" transform="rotate(30 -3.9 -6)" fill="url(#g-yarn-b)" stroke="#0A0B0E" stroke-width="0.6"/><ellipse cx="3.9" cy="-6" rx="3" ry="7.5" transform="rotate(-30 3.9 -6)" fill="url(#g-yarn-b)" stroke="#0A0B0E" stroke-width="0.6"/><ellipse cx="10.5" cy="-6" rx="3" ry="7.5" transform="rotate(30 10.5 -6)" fill="url(#g-yarn-b)" stroke="#0A0B0E" stroke-width="0.6"/><ellipse cx="18.3" cy="-6" rx="3" ry="7.5" transform="rotate(-30 18.3 -6)" fill="url(#g-yarn-b)" stroke="#0A0B0E" stroke-width="0.6"/><ellipse cx="24.9" cy="-6" rx="3" ry="7.5" transform="rotate(30 24.9 -6)" fill="url(#g-yarn-b)" stroke="#0A0B0E" stroke-width="0.6"/><ellipse cx="-10.5" cy="6" rx="3" ry="7.5" transform="rotate(-30 -10.5 6)" fill="url(#g-yarn-b)" stroke="#0A0B0E" stroke-width="0.6"/><ellipse cx="-3.9" cy="6" rx="3" ry="7.5" transform="rotate(30 -3.9 6)" fill="url(#g-yarn-b)" stroke="#0A0B0E" stroke-width="0.6"/><ellipse cx="3.9" cy="6" rx="3" ry="7.5" transform="rotate(-30 3.9 6)" fill="url(#g-yarn-b)" stroke="#0A0B0E" stroke-width="0.6"/><ellipse cx="10.5" cy="6" rx="3" ry="7.5" transform="rotate(30 10.5 6)" fill="url(#g-yarn-b)" stroke="#0A0B0E" stroke-width="0.6"/><ellipse cx="18.3" cy="6" rx="3" ry="7.5" transform="rotate(-30 18.3 6)" fill="url(#g-yarn-b)" stroke="#0A0B0E" stroke-width="0.6"/><ellipse cx="24.9" cy="6" rx="3" ry="7.5" transform="rotate(30 24.9 6)" fill="url(#g-yarn-b)" stroke="#0A0B0E" stroke-width="0.6"/><ellipse cx="-10.5" cy="18" rx="3" ry="7.5" transform="rotate(-30 -10.5 18)" fill="url(#g-yarn-b)" stroke="#0A0B0E" stroke-width="0.6"/><ellipse cx="-3.9" cy="18" rx="3" ry="7.5" transform="rotate(30 -3.9 18)" fill="url(#g-yarn-b)" stroke="#0A0B0E" stroke-width="0.6"/><ellipse cx="3.9" cy="18" rx="3" ry="7.5" transform="rotate(-30 3.9 18)" fill="url(#g-yarn-b)" stroke="#0A0B0E" stroke-width="0.6"/><ellipse cx="10.5" cy="18" rx="3" ry="7.5" transform="rotate(30 10.5 18)" fill="url(#g-yarn-b)" stroke="#0A0B0E" stroke-width="0.6"/><ellipse cx="18.3" cy="18" rx="3" ry="7.5" transform="rotate(-30 18.3 18)" fill="url(#g-yarn-b)" stroke="#0A0B0E" stroke-width="0.6"/><ellipse cx="24.9" cy="18" rx="3" ry="7.5" transform="rotate(30 24.9 18)" fill="url(#g-yarn-b)" stroke="#0A0B0E" stroke-width="0.6"/></pattern>
+    <!-- Fleece BACK: brushed back yarn — loose raised fibres over a soft ground -->
+    <pattern id="p-fb" width="60" height="60" patternUnits="userSpaceOnUse">
+      <rect width="60" height="60" fill="#2A2926"/>
+      <path d="M19.4 9.1Q18.1 5.7 16.2 4.6M3.5 30.4Q3.9 28.1 11.3 32.3M25.5 49.6Q28.8 55.5 30.1 54.2M34.6 23.8Q40.1 21.7 39.9 23.0M8.7 7.1Q4.2 12.7 4.8 17.1M38.3 22.3Q32.2 19.2 33.1 20.7M40.8 25.7Q38.7 28.2 37.3 34.0M47.7 41.9Q48.0 49.4 48.0 51.0M43.8 17.3Q46.0 19.0 49.5 16.6M9.1 29.3Q15.9 31.1 18.5 31.7M52.5 18.8Q51.6 14.2 49.4 10.2M50.4 56.7Q42.1 59.1 40.9 58.2M38.8 59.6Q39.4 57.8 41.9 53.3M7.8 14.9Q0.1 18.0 -0.8 21.9M33.0 53.0Q33.5 47.3 37.6 43.0M21.5 53.1Q21.9 50.1 27.4 51.5M14.0 29.1Q7.1 26.6 8.2 25.5M22.2 34.0Q27.0 33.5 31.6 31.1M23.5 23.9Q23.8 23.3 31.1 29.7M12.5 9.7Q7.1 9.2 9.6 14.3M6.1 21.8Q12.5 19.9 17.1 23.6M15.1 20.8Q16.0 27.0 11.3 25.3M28.0 29.0Q29.2 28.6 32.9 32.0M15.7 22.0Q18.5 28.7 20.8 31.0M19.8 13.4Q24.8 10.3 24.3 2.4M49.1 44.4Q48.6 44.9 50.4 52.9M1.7 16.8Q5.0 21.3 1.1 26.6M11.8 12.3Q10.5 8.1 3.8 4.3M39.2 48.0Q46.6 52.7 47.5 52.9M45.0 28.7Q46.0 35.8 49.6 38.2M58.3 23.8Q55.4 24.5 48.8 30.5M7.6 9.1Q9.2 8.7 16.4 3.1M58.8 39.4Q53.3 39.1 53.6 46.6M58.3 39.0Q52.0 41.0 46.9 37.1M49.6 12.7Q47.5 16.9 49.5 19.7M15.6 25.1Q18.3 29.0 23.3 33.5M35.0 54.3Q30.0 57.2 25.0 59.7M10.3 28.4Q8.3 24.2 9.0 19.6M33.3 47.1Q34.8 48.0 40.3 52.6M46.3 30.5Q44.9 28.1 36.8 26.6M36.8 30.3Q31.5 30.2 26.9 29.6M28.7 56.5Q30.5 49.3 25.2 45.9M33.6 56.6Q32.1 53.6 36.8 51.6M4.4 14.4Q11.0 19.8 13.0 18.7M9.3 43.0Q10.7 44.2 6.1 37.9M9.7 25.9Q3.6 24.1 2.3 25.2M37.4 30.7Q45.2 36.8 48.4 35.4M6.3 15.9Q9.5 14.3 16.4 18.5M25.3 54.7Q24.0 54.9 28.2 48.5M34.2 42.0Q38.0 42.9 38.8 44.9M16.1 7.8Q9.7 4.5 9.5 6.6M3.0 12.1Q3.7 13.7 0.3 18.7M30.0 10.7Q26.5 8.9 27.1 14.9M44.0 33.1Q49.0 33.8 47.1 40.8M49.1 25.9Q42.9 26.2 38.3 26.3M24.3 20.9Q23.6 23.8 29.8 22.8M15.3 9.8Q23.0 13.9 24.7 15.3M16.9 14.5Q13.1 18.1 14.7 22.5M15.8 57.7Q18.1 60.7 24.5 56.2" fill="none" stroke="#DCD6CA" stroke-opacity=".6" stroke-width="1" stroke-linecap="round"/>
+    </pattern>
+    <!-- Terry BACK: pile loops standing out from the knitted ground -->
+    <pattern id="p-tb" width="24" height="24" patternUnits="userSpaceOnUse">
+      <rect width="24" height="24" fill="url(#p-jb)"/>
+      <rect width="24" height="24" fill="#0E0F12" fill-opacity=".55"/>
+      <circle cx="6.5" cy="7.5" r="4.4" fill="none" stroke="#0A0A0C" stroke-width="3"/>
+      <circle cx="6" cy="6.5" r="4.4" fill="none" stroke="url(#g-yarn)" stroke-width="2.4"/>
+      <circle cx="18.5" cy="19.5" r="4.4" fill="none" stroke="#0A0A0C" stroke-width="3"/>
+      <circle cx="18" cy="18.5" r="4.4" fill="none" stroke="url(#g-yarn)" stroke-width="2.4"/>
+    </pattern>
+    <!-- Hero macro: big single jersey loops, as if seen through a macro lens -->
+    <pattern id="p-hero" width="96" height="80" patternUnits="userSpaceOnUse" patternTransform="rotate(-7)"><rect width="96" height="80" fill="#0B0C0F"/><ellipse cx="-70" cy="-40" rx="20" ry="50" transform="rotate(-30 -70 -40)" fill="url(#g-hero)" stroke="#0A0B0E" stroke-width="3"/><ellipse cx="-26" cy="-40" rx="20" ry="50" transform="rotate(30 -26 -40)" fill="url(#g-hero)" stroke="#0A0B0E" stroke-width="3"/><ellipse cx="26" cy="-40" rx="20" ry="50" transform="rotate(-30 26 -40)" fill="url(#g-hero)" stroke="#0A0B0E" stroke-width="3"/><ellipse cx="70" cy="-40" rx="20" ry="50" transform="rotate(30 70 -40)" fill="url(#g-hero)" stroke="#0A0B0E" stroke-width="3"/><ellipse cx="122" cy="-40" rx="20" ry="50" transform="rotate(-30 122 -40)" fill="url(#g-hero)" stroke="#0A0B0E" stroke-width="3"/><ellipse cx="166" cy="-40" rx="20" ry="50" transform="rotate(30 166 -40)" fill="url(#g-hero)" stroke="#0A0B0E" stroke-width="3"/><ellipse cx="-70" cy="40" rx="20" ry="50" transform="rotate(-30 -70 40)" fill="url(#g-hero)" stroke="#0A0B0E" stroke-width="3"/><ellipse cx="-26" cy="40" rx="20" ry="50" transform="rotate(30 -26 40)" fill="url(#g-hero)" stroke="#0A0B0E" stroke-width="3"/><ellipse cx="26" cy="40" rx="20" ry="50" transform="rotate(-30 26 40)" fill="url(#g-hero)" stroke="#0A0B0E" stroke-width="3"/><ellipse cx="70" cy="40" rx="20" ry="50" transform="rotate(30 70 40)" fill="url(#g-hero)" stroke="#0A0B0E" stroke-width="3"/><ellipse cx="122" cy="40" rx="20" ry="50" transform="rotate(-30 122 40)" fill="url(#g-hero)" stroke="#0A0B0E" stroke-width="3"/><ellipse cx="166" cy="40" rx="20" ry="50" transform="rotate(30 166 40)" fill="url(#g-hero)" stroke="#0A0B0E" stroke-width="3"/><ellipse cx="-70" cy="120" rx="20" ry="50" transform="rotate(-30 -70 120)" fill="url(#g-hero)" stroke="#0A0B0E" stroke-width="3"/><ellipse cx="-26" cy="120" rx="20" ry="50" transform="rotate(30 -26 120)" fill="url(#g-hero)" stroke="#0A0B0E" stroke-width="3"/><ellipse cx="26" cy="120" rx="20" ry="50" transform="rotate(-30 26 120)" fill="url(#g-hero)" stroke="#0A0B0E" stroke-width="3"/><ellipse cx="70" cy="120" rx="20" ry="50" transform="rotate(30 70 120)" fill="url(#g-hero)" stroke="#0A0B0E" stroke-width="3"/><ellipse cx="122" cy="120" rx="20" ry="50" transform="rotate(-30 122 120)" fill="url(#g-hero)" stroke="#0A0B0E" stroke-width="3"/><ellipse cx="166" cy="120" rx="20" ry="50" transform="rotate(30 166 120)" fill="url(#g-hero)" stroke="#0A0B0E" stroke-width="3"/></pattern>
+  </defs>
 </svg>
 
 <header class="nav" id="top">
   <a class="brand" href="#top" aria-label="Dhiyasri Apparels — home">
-    <span class="wordmark">
-      <span class="wm-text">dhiyasri</span>
-      <svg class="wm-yarn" aria-hidden="true"><use href="#yarnmark"/></svg>
-    </span>
+    <span class="wordmark"><span class="wm-text">dhiyasri</span><svg class="wm-yarn" aria-hidden="true"><use href="#yarnmark"/></svg></span>
     <span class="wm-sub">Tiruppur, India</span>
   </a>
   <nav aria-label="Primary">
     <ul>
-      <li><a href="#who">About</a></li>
-      <li><a href="#knits">Knits</a></li>
-      <li><a href="#process">Process</a></li>
-      <li><a href="#terms">MOQ</a></li>
+      <li><a class="link" href="#who">About</a></li>
+      <li><a class="link" href="#knits">Knits</a></li>
+      <li><a class="link" href="#process">Process</a></li>
+      <li><a class="link" href="#numbers">MOQ</a></li>
     </ul>
   </nav>
   <a class="btn btn-sm" href="#quote">Request a quote</a>
 </header>
 
 <main>
-  <!-- HERO — fabric to garment, told by scroll -->
-  <section class="hero" id="hero" aria-label="Cotton knit, made in Tiruppur">
-    <div class="hero-sticky">
-      <div class="hero-canvas" id="heroStage">
-        <canvas id="heroCanvas" aria-label="Interactive 3D model of knitted cotton jersey. It starts on a single loop, zooms out to a fabric swatch, then forms a T-shirt as you scroll. Drag to rotate." role="img"></canvas>
-        <div class="knit-fallback" aria-hidden="true"></div>
+  <!-- ======================= HERO ======================= -->
+  <section class="hero" id="hero" aria-labelledby="hero-h">
+    <div class="hero-media" id="heroMedia">
+      <!--
+        PLACEHOLDER — replace with the owner's 6–8 s macro video of single jersey.
+        To switch on: put the file at assets/hero-jersey.mp4 (and optionally .webm),
+        then uncomment the <source> lines below. main.js detects the source, shows the
+        video, and the pause button below controls it. Until then this SVG knit texture
+        (and its slow drift) stands in, and the same button pauses the drift.
+      -->
+      <video class="hero-video" id="heroVideo" muted loop playsinline preload="none" hidden aria-hidden="true">
+        <!-- <source src="assets/hero-jersey.webm" type="video/webm"> -->
+        <!-- <source src="assets/hero-jersey.mp4" type="video/mp4"> -->
+      </video>
+      <div class="hero-placeholder" aria-hidden="true">
+        <svg class="hero-knit" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice"><filter id="f-grain" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".9 .12" numOctaves="2" seed="3"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .55 0"/></filter><rect x="-200" y="-200" width="1840" height="1300" fill="url(#p-hero)"/><rect width="1440" height="900" filter="url(#f-grain)" opacity=".5"/></svg>
+        <div class="hero-dof"></div>
       </div>
-
       <div class="hero-scrim" aria-hidden="true"></div>
-      <div class="hero-copy">
-        <p class="label">[00 — Dhiyasri Apparels]</p>
-        <h1 class="display">Cotton knit, made in Tiruppur. <span class="dim">From yarn to finished garment.</span></h1>
-        <div class="hero-actions">
-          <a class="btn" href="#quote">Request a quote</a>
-          <a class="link" href="#knits">Explore knits <span aria-hidden="true">↓</span></a>
-        </div>
-      </div>
+    </div>
 
-      <ol class="stages" aria-label="What you are looking at">
-        <li data-stage="0" class="is-on" aria-current="step"><span class="dot" aria-hidden="true"></span><span class="st-k">Loop</span><span class="st-v">One knitted stitch</span></li>
-        <li data-stage="1"><span class="dot" aria-hidden="true"></span><span class="st-k">Fabric</span><span class="st-v">Loops become jersey</span></li>
-        <li data-stage="2"><span class="dot" aria-hidden="true"></span><span class="st-k">Garment</span><span class="st-v">Jersey becomes a tee</span></li>
-      </ol>
-      <p class="hero-hint label" aria-hidden="true"><span class="only-fine">[Drag to rotate · scroll to follow the yarn]</span><span class="only-coarse">[Scroll to follow the yarn]</span></p>
-      <p class="sr-only" id="stageLive" aria-live="polite"></p>
+    <div class="hero-copy">
+      <p class="label">Dhiyasri Apparels · Tiruppur, Tamil Nadu</p>
+      <h1 class="display" id="hero-h">Cotton knit,<br> made in&nbsp;Tiruppur.</h1>
+      <p class="hero-sub">From yarn to finished garment — knitted, dyed, cut and stitched under one roof.</p>
+      <div class="hero-actions">
+        <a class="btn" href="#quote">Request a quote</a>
+        <a class="link link-quiet" href="#knits">Explore the knits <span aria-hidden="true">↓</span></a>
+      </div>
+    </div>
+
+    <div class="hero-ctrl">
+      <span class="hero-tag"><span class="ph">[Fabric film — to be supplied]</span></span>
+      <button type="button" class="pause" id="heroPause" aria-pressed="false">
+        <svg class="i-pause" viewBox="0 0 16 16" aria-hidden="true"><rect x="4" y="3" width="2.6" height="10" rx="1"/><rect x="9.4" y="3" width="2.6" height="10" rx="1"/></svg>
+        <svg class="i-play" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3.2v9.6a.6.6 0 0 0 .9.5l7.4-4.8a.6.6 0 0 0 0-1L5.9 2.7a.6.6 0 0 0-.9.5z"/></svg>
+        <span class="pause-txt">Pause motion</span>
+      </button>
     </div>
   </section>
 
-  <div class="flow" id="flow">
-    <!-- The single yarn line that threads the page and draws the graphics -->
-    <svg class="yarn" id="yarn" aria-hidden="true" focusable="false">
-      <path class="yarn-ghost" d=""/>
-      <path class="yarn-glow" d=""/>
-      <path class="yarn-glow yarn-glow2" d=""/>
-      <path class="yarn-line" d=""/>
-      <g class="yarn-dots"></g>
-    </svg>
-
-    <!-- 01 WHO WE ARE -->
-    <section class="sec who" id="who" aria-labelledby="who-h">
-      <span class="anchor" data-a="v" data-dot></span>
-      <div class="wrap">
-        <p class="label">[01 — Origin]</p>
-        <div class="who-grid">
-          <div>
-            <h2 class="display h2" id="who-h">Fabric to finished garment, <span class="dim">under one roof.</span></h2>
-            <p class="lead">Dhiyasri Apparels knits, dyes, cuts and stitches cotton in Tiruppur, Tamil Nadu — India’s knitwear town. One team carries your order from yarn to packed garment.</p>
-            <dl class="facts">
-              <div><dt>Location</dt><dd>Tiruppur, Tamil Nadu, India</dd></div>
-              <div><dt>Founded</dt><dd><span class="ph">[since YEAR — to confirm]</span></dd></div>
-              <div><dt>Export</dt><dd>IEC holder (Importer Exporter Code)</dd></div>
-              <div><dt>Own label</dt><dd>Pekaboo Clothing</dd></div>
-            </dl>
-          </div>
-          <div class="who-num">
-            <p class="hero-num" aria-label="31 years of knitting expertise">31<span class="dim">yrs</span></p>
-            <p class="num-cap">of knitting expertise</p>
-          </div>
-        </div>
-
-        <figure class="scale years" aria-label="Timeline: 31 years of knitting, one tick per year">
-          <div class="scale-track" id="yearTicks">
-            <span class="anchor" data-a="h" data-dot style="left:0"></span>
-            <span class="anchor" data-a="h" data-dot style="left:100%"></span>
-          </div>
-          <figcaption class="scale-legend"><span class="ph">[since YEAR — to confirm]</span><span>One tick = one year</span><span>Today</span></figcaption>
-        </figure>
-
-        <div class="photos">
-          <figure class="photo-ph"><span>[Factory photo — to be supplied]</span><figcaption>Knitting floor</figcaption></figure>
-          <figure class="photo-ph"><span>[Factory photo — to be supplied]</span><figcaption>Stitching line</figcaption></figure>
-        </div>
-      </div>
-    </section>
-
-    <!-- 02 KNITS -->
-    <section class="sec knits" id="knits" aria-labelledby="knits-h">
-      <div class="wrap">
-        <p class="label">[02 — Knits]</p>
-        <h2 class="display h2" id="knits-h">Five knit structures. <span class="dim">One cotton hand.</span></h2>
-
-        <div class="knit-ui">
-          <div class="viewer glass" id="viewer">
-            <canvas id="knitCanvas" role="img" aria-label="3D close-up of the selected knit structure. Drag to rotate."></canvas>
-            <div class="knit-fallback" aria-hidden="true"></div>
-            <p class="viewer-tag label" id="viewerTag">[Single jersey]</p>
-            <p class="viewer-hint label" aria-hidden="true">[Drag to rotate]</p>
-          </div>
-
-          <div class="knit-list" role="group" aria-label="Choose a knit structure">
-            <button type="button" class="knit-btn" data-knit="jersey" aria-pressed="true"><span class="kb-i">01</span><span class="kb-n">Single jersey</span><span class="kb-d">Plain face loops, one needle bed. Light and smooth.</span></button>
-            <button type="button" class="knit-btn" data-knit="rib" aria-pressed="false"><span class="kb-i">02</span><span class="kb-n">Rib</span><span class="kb-d">Face and back wales alternate. Stretches across the width.</span></button>
-            <button type="button" class="knit-btn" data-knit="interlock" aria-pressed="false"><span class="kb-i">03</span><span class="kb-n">Interlock</span><span class="kb-d">Two jersey layers knitted together. Smooth on both faces.</span></button>
-            <button type="button" class="knit-btn" data-knit="fleece" aria-pressed="false"><span class="kb-i">04</span><span class="kb-n">Fleece</span><span class="kb-d">Jersey face, soft brushed back yarn. Warm and lofty.</span></button>
-            <button type="button" class="knit-btn" data-knit="terry" aria-pressed="false"><span class="kb-i">05</span><span class="kb-n">Terry</span><span class="kb-d">Extra pile loops stand out from the ground. Absorbent.</span></button>
-          </div>
-        </div>
-
-        <div class="gsm">
-          <p class="hero-num gsm-num" aria-label="110 to 440 GSM">110–440<span class="dim">GSM</span></p>
-          <p class="num-cap">Fabric weight range, grams per square metre</p>
-          <figure class="scale gsm-scale" aria-label="Scale from 0 to 500 GSM; our range spans 110 to 440">
-            <div class="scale-track">
-              <span class="tick t" style="left:0%"><i>0</i></span>
-              <span class="tick t" style="left:20%"><i>100</i></span>
-              <span class="tick t" style="left:40%"><i>200</i></span>
-              <span class="tick t" style="left:60%"><i>300</i></span>
-              <span class="tick t" style="left:80%"><i>400</i></span>
-              <span class="tick t" style="left:100%"><i>500</i></span>
-              <span class="anchor" data-a="h" data-dot style="left:22%"><b class="end-lab">110</b></span>
-              <span class="anchor" data-a="h" data-dot style="left:88%"><b class="end-lab">440</b></span>
-            </div>
-          </figure>
-        </div>
-      </div>
-    </section>
-
-    <!-- 03 PROCESS -->
-    <section class="sec process" id="process" aria-labelledby="process-h">
-      <div class="wrap">
-        <p class="label">[03 — Process]</p>
-        <h2 class="display h2" id="process-h">Yarn in. <span class="dim">Garment out.</span></h2>
-        <ol class="steps">
-          <li class="step"><span class="anchor" data-a="v" data-dot data-loop></span><p class="label">[Step 1]</p><h3>Knitting</h3><p>Cotton yarn is knitted into fabric — jersey, rib, interlock, fleece or terry.</p></li>
-          <li class="step"><span class="anchor" data-a="v" data-dot data-loop></span><p class="label">[Step 2]</p><h3>Dyeing</h3><p>Greige fabric is dyed and processed to the shade you approve.</p></li>
-          <li class="step"><span class="anchor" data-a="v" data-dot data-loop></span><p class="label">[Step 3]</p><h3>Cutting</h3><p>Fabric is laid and cut into panels to your pattern.</p></li>
-          <li class="step"><span class="anchor" data-a="v" data-dot data-loop></span><p class="label">[Step 4]</p><h3>Stitching</h3><p>Panels are sewn into the finished style.</p></li>
-          <li class="step"><span class="anchor" data-a="v" data-dot data-loop></span><p class="label">[Step 5]</p><h3>Finishing</h3><p>Garments are checked, pressed, labelled and packed.</p></li>
-        </ol>
-
-        <div class="made glass">
-          <p class="label">[What we make]</p>
-          <ul class="chips">
-            <li>T-shirts</li><li>Hoodies</li><li>Track pants</li><li>Uniforms</li><li>Private label</li>
-          </ul>
-          <p class="made-note">Also home to our own label, <em>Pekaboo Clothing</em>.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- 04 BRANDS -->
-    <section class="sec brands" id="brands" aria-labelledby="brands-h">
-      <div class="wrap">
-        <p class="label">[04 — Produced for]</p>
-        <h2 class="display h2" id="brands-h">Brands we’ve produced for.</h2>
-        <ul class="brand-list">
-          <li><span class="anchor" data-a="v" data-dot></span>WROGN</li>
-          <li>Puma</li>
-          <li>Wrangler</li>
-        </ul>
-        <p class="fine">Listed as text only. Names and trademarks belong to their owners.</p>
-      </div>
-    </section>
-
-    <!-- 05 TERMS -->
-    <section class="sec terms" id="terms" aria-labelledby="terms-h">
-      <div class="wrap">
-        <p class="label">[05 — Terms]</p>
-        <h2 class="display h2" id="terms-h">Minimums that fit a first order. <span class="dim">Ready to ship abroad.</span></h2>
-        <div class="cards">
-          <article class="card glass">
-            <p class="label">[Fabric MOQ]</p>
-            <p class="card-num">250<span class="dim">kg</span></p>
-            <p class="card-cap">Minimum per fabric order</p>
-          </article>
-          <article class="card glass">
-            <p class="label">[T-shirt MOQ]</p>
-            <p class="card-num">500<span class="dim">pcs</span></p>
-            <p class="card-cap">Minimum per T-shirt order</p>
-          </article>
-          <article class="card glass">
-            <p class="label">[Lead time]</p>
-            <p class="card-num">14–30<span class="dim">days</span></p>
-            <p class="card-cap"><span class="ph">[to confirm]</span> Placeholder range</p>
-          </article>
-          <article class="card glass card-export">
-            <p class="label">[Export ready]</p>
-            <p class="card-num sm">IEC<span class="dim">holder</span></p>
-            <p class="card-cap">We supply brands, D2C labels, garment factories, private label buyers and wholesalers worldwide.</p>
-          </article>
-        </div>
-
-        <figure class="scale lead-scale" aria-label="Lead time scale in days, 0 to 30. Window 14 to 30 days, to be confirmed.">
-          <div class="scale-track">
-            <span class="tick t" style="left:0%"><i>Day 0</i></span>
-            <span class="tick t" style="left:100%"><i>Day 30</i></span>
-            <span class="window" style="left:46.67%;right:0"></span>
-            <span class="anchor" data-a="h" style="left:0%"></span>
-            <span class="anchor" data-a="h" data-dot style="left:46.67%"><b class="end-lab">14</b></span>
-            <span class="anchor" data-a="h" data-dot style="left:100%"><b class="end-lab">30</b></span>
-          </div>
-          <figcaption class="scale-legend"><span>Order confirmed</span><span><span class="ph">[to confirm]</span> Dispatch window</span></figcaption>
-        </figure>
-      </div>
-    </section>
-
-    <!-- 06 QUOTE -->
-    <section class="sec quote" id="quote" aria-labelledby="quote-h">
-      <div class="wrap quote-grid">
+  <!-- ======================= 01 WHO WE ARE ======================= -->
+  <section class="sec who" id="who" aria-labelledby="who-h">
+    <div class="wrap">
+      <p class="label">[01 — Who we are]</p>
+      <div class="who-grid">
         <div>
-          <p class="label">[06 — Quote]</p>
-          <h2 class="display h2" id="quote-h">Request a quote. <span class="dim">Tell us the fabric or the garment.</span></h2>
-          <dl class="facts contact">
-            <div><dt>Contact</dt><dd><span class="ph">[email / WhatsApp to confirm]</span></dd></div>
-            <div><dt>LinkedIn</dt><dd><a class="link" href="https://www.linkedin.com/in/srinivasan-natarajan-b3731780/" target="_blank" rel="noopener">Srinivasan Natarajan <span aria-hidden="true">↗</span></a></dd></div>
+          <h2 class="h2" id="who-h">Fabric to finished garment, <span class="dim">under one roof.</span></h2>
+          <p class="lead">Dhiyasri Apparels knits, dyes, cuts and stitches cotton in Tiruppur, Tamil Nadu — India’s knitwear town. One team carries your order from yarn to packed garment.</p>
+          <dl class="facts">
+            <div><dt>Owner</dt><dd>Srinivasan Natarajan</dd></div>
             <div><dt>Location</dt><dd>Tiruppur, Tamil Nadu, India</dd></div>
+            <div><dt>Founded</dt><dd><span class="ph">[since YEAR — to confirm]</span></dd></div>
+            <div><dt>Export</dt><dd>IEC holder (Importer Exporter Code)</dd></div>
+            <div><dt>Own label</dt><dd>Pekaboo Clothing</dd></div>
           </dl>
         </div>
-        <form class="form glass" id="quoteForm" novalidate>
-          <div class="field"><label for="f-name">Name</label><input id="f-name" name="name" autocomplete="name" required></div>
+        <figure class="years" aria-label="31 years of knitting cotton, shown as 31 ticks, one per year">
+          <p class="big-num"><span class="tnum">31</span><span class="unit">years</span></p>
+          <figcaption class="num-cap">of knitting cotton in Tiruppur</figcaption>
+          <div class="ticks" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <div class="ticks-legend"><span class="ph">[since YEAR — to confirm]</span><span>One tick = one year</span><span>Today</span></div>
+        </figure>
+      </div>
+
+      <div class="photos">
+        <figure class="photo-ph"><span class="ph">[Factory photo — to be supplied]</span><figcaption>Knitting floor</figcaption></figure>
+        <figure class="photo-ph"><span class="ph">[Factory photo — to be supplied]</span><figcaption>Stitching line</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= 02 KNITS ======================= -->
+  <section class="sec knits" id="knits" aria-labelledby="knits-h">
+    <div class="wrap">
+      <p class="label">[02 — Knits]</p>
+      <div class="knits-head">
+        <h2 class="h2" id="knits-h">Five knit structures. <span class="dim">One cotton hand.</span></h2>
+        <p class="lead sm">Hover, tap or press <kbd>Enter</kbd> on a swatch to turn it over and see the back of the fabric.</p>
+      </div>
+
+      <!-- GSM finder: moves a pin on every swatch's weight bar and marks the knits made at that weight -->
+      <div class="gsm-finder" id="gsmFinder">
+        <div class="gf-read">
+          <label for="gsm" class="gf-label">Find your fabric weight</label>
+          <p class="gf-val"><output id="gsmOut" for="gsm" class="tnum">220</output><span class="unit">GSM</span></p>
+        </div>
+        <div class="gf-ctrl">
+          <input type="range" id="gsm" min="110" max="440" step="10" value="220" aria-describedby="gsmResult gsmNote">
+          <div class="gf-scale" aria-hidden="true"><span>110</span><span>440</span></div>
+          <p class="gf-result" id="gsmResult" aria-live="polite"></p>
+          <p class="gf-note" id="gsmNote">Range across our knits: 110–440 GSM. Per-knit ranges <span class="ph">[to confirm]</span> — until then each knit shows the full range.</p>
+        </div>
+      </div>
+
+      <!--
+        Each tile's data-gsm-min / data-gsm-max drives its weight bar and the finder above.
+        The source only states the overall 110–440 GSM range, so every knit uses that
+        for now. Edit these numbers once per-knit ranges are confirmed.
+      -->
+      <ul class="tiles" id="tiles">
+        <li class="tile" data-knit="Single jersey" data-gsm-min="110" data-gsm-max="440">
+          <button type="button" class="flip" aria-pressed="false"><span class="flip-txt">Turn over</span><span class="sr-only"> single jersey</span></button>
+          <div class="tile-in">
+            <div class="face front">
+              <div class="sw"><svg viewBox="0 0 300 190" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Face of single jersey: columns of V-shaped loops"><rect width="300" height="190" fill="url(#p-jf)"/></svg><span class="side">Face</span></div>
+              <div class="tb"><p class="idx tnum">01</p><h3 class="t-name">Single jersey</h3><p class="t-txt">Plain face loops, one needle bed. Light and smooth.</p>
+                <div class="gbar" aria-hidden="true"><span class="gb-fill"></span><span class="gb-pin"></span></div><p class="gb-lab"><span class="tnum">110</span><span class="match">Made at this weight</span><span class="tnum">440 GSM</span></p></div>
+            </div>
+            <div class="face back">
+              <div class="sw"><svg viewBox="0 0 300 190" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Back of single jersey: rows of purl bumps"><rect width="300" height="190" fill="url(#p-jb)"/></svg><span class="side">Back</span></div>
+              <div class="tb"><p class="idx tnum">01</p><h3 class="t-name" aria-hidden="true">Single jersey</h3><p class="t-txt">The back shows purl bumps — small half-loops in rows. One face smooth, one face textured.</p></div>
+            </div>
+          </div>
+        </li>
+        <li class="tile" data-knit="Rib" data-gsm-min="110" data-gsm-max="440">
+          <button type="button" class="flip" aria-pressed="false"><span class="flip-txt">Turn over</span><span class="sr-only"> rib</span></button>
+          <div class="tile-in">
+            <div class="face front">
+              <div class="sw"><svg viewBox="0 0 300 190" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Face of rib: raised knit columns alternating with recessed purl columns"><rect width="300" height="190" fill="url(#p-rf)"/></svg><span class="side">Face</span></div>
+              <div class="tb"><p class="idx tnum">02</p><h3 class="t-name">Rib</h3><p class="t-txt">Face and back wales alternate. Stretches across the width.</p>
+                <div class="gbar" aria-hidden="true"><span class="gb-fill"></span><span class="gb-pin"></span></div><p class="gb-lab"><span class="tnum">110</span><span class="match">Made at this weight</span><span class="tnum">440 GSM</span></p></div>
+            </div>
+            <div class="face back">
+              <div class="sw"><svg viewBox="0 0 300 190" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Back of rib: the same alternating columns"><rect width="300" height="190" fill="url(#p-rb)"/></svg><span class="side">Back</span></div>
+              <div class="tb"><p class="idx tnum">02</p><h3 class="t-name" aria-hidden="true">Rib</h3><p class="t-txt">Turn it over and the columns repeat — rib looks the same on both sides, which is why it holds collars and cuffs.</p></div>
+            </div>
+          </div>
+        </li>
+        <li class="tile" data-knit="Interlock" data-gsm-min="110" data-gsm-max="440">
+          <button type="button" class="flip" aria-pressed="false"><span class="flip-txt">Turn over</span><span class="sr-only"> interlock</span></button>
+          <div class="tile-in">
+            <div class="face front">
+              <div class="sw"><svg viewBox="0 0 300 190" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Face of interlock: fine, tight V-shaped loops"><rect width="300" height="190" fill="url(#p-if)"/></svg><span class="side">Face</span></div>
+              <div class="tb"><p class="idx tnum">03</p><h3 class="t-name">Interlock</h3><p class="t-txt">Two jersey layers knitted together. Smooth on both faces.</p>
+                <div class="gbar" aria-hidden="true"><span class="gb-fill"></span><span class="gb-pin"></span></div><p class="gb-lab"><span class="tnum">110</span><span class="match">Made at this weight</span><span class="tnum">440 GSM</span></p></div>
+            </div>
+            <div class="face back">
+              <div class="sw"><svg viewBox="0 0 300 190" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Back of interlock: the same fine V-shaped loops"><rect width="300" height="190" fill="url(#p-ib)"/></svg><span class="side">Back</span></div>
+              <div class="tb"><p class="idx tnum">03</p><h3 class="t-name" aria-hidden="true">Interlock</h3><p class="t-txt">The back is as smooth as the face — there is no purl side.</p></div>
+            </div>
+          </div>
+        </li>
+        <li class="tile" data-knit="Fleece" data-gsm-min="110" data-gsm-max="440">
+          <button type="button" class="flip" aria-pressed="false"><span class="flip-txt">Turn over</span><span class="sr-only"> fleece</span></button>
+          <div class="tile-in">
+            <div class="face front">
+              <div class="sw"><svg viewBox="0 0 300 190" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Face of fleece: plain jersey loops"><rect width="300" height="190" fill="url(#p-jf)"/></svg><span class="side">Face</span></div>
+              <div class="tb"><p class="idx tnum">04</p><h3 class="t-name">Fleece</h3><p class="t-txt">Jersey face, soft brushed back yarn. Warm and lofty.</p>
+                <div class="gbar" aria-hidden="true"><span class="gb-fill"></span><span class="gb-pin"></span></div><p class="gb-lab"><span class="tnum">110</span><span class="match">Made at this weight</span><span class="tnum">440 GSM</span></p></div>
+            </div>
+            <div class="face back">
+              <div class="sw"><svg viewBox="0 0 300 190" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Back of fleece: brushed, raised fibres"><rect width="300" height="190" fill="url(#p-fb)"/></svg><span class="side">Back</span></div>
+              <div class="tb"><p class="idx tnum">04</p><h3 class="t-name" aria-hidden="true">Fleece</h3><p class="t-txt">The back yarn is brushed up into soft, raised fibres that trap warmth.</p></div>
+            </div>
+          </div>
+        </li>
+        <li class="tile" data-knit="Terry" data-gsm-min="110" data-gsm-max="440">
+          <button type="button" class="flip" aria-pressed="false"><span class="flip-txt">Turn over</span><span class="sr-only"> terry</span></button>
+          <div class="tile-in">
+            <div class="face front">
+              <div class="sw"><svg viewBox="0 0 300 190" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Face of terry: plain jersey loops"><rect width="300" height="190" fill="url(#p-jf)"/></svg><span class="side">Face</span></div>
+              <div class="tb"><p class="idx tnum">05</p><h3 class="t-name">Terry</h3><p class="t-txt">Extra pile loops stand out from the ground. Absorbent.</p>
+                <div class="gbar" aria-hidden="true"><span class="gb-fill"></span><span class="gb-pin"></span></div><p class="gb-lab"><span class="tnum">110</span><span class="match">Made at this weight</span><span class="tnum">440 GSM</span></p></div>
+            </div>
+            <div class="face back">
+              <div class="sw"><svg viewBox="0 0 300 190" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Back of terry: pile loops standing out from the ground"><rect width="300" height="190" fill="url(#p-tb)"/></svg><span class="side">Back</span></div>
+              <div class="tb"><p class="idx tnum">05</p><h3 class="t-name" aria-hidden="true">Terry</h3><p class="t-txt">The pile loops sit on the back, standing out from the knitted ground.</p></div>
+            </div>
+          </div>
+        </li>
+        <li class="tile tile-garment" data-knit="Garments">
+          <button type="button" class="flip" aria-pressed="false"><span class="flip-txt">Turn over</span><span class="sr-only"> garments and private label</span></button>
+          <div class="tile-in">
+            <div class="face front">
+              <div class="sw sw-tee"><svg viewBox="0 0 300 190" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Front of a T-shirt cut from single jersey">
+                <path d="M124 26 L104 32 L76 48 L88 74 L106 66 L106 170 L194 170 L194 66 L212 74 L224 48 L196 32 L176 26 Q150 46 124 26 Z" fill="url(#p-jf)" stroke="#EDEAE3" stroke-opacity=".5" stroke-width="1"/>
+              </svg><span class="side">Front</span></div>
+              <div class="tb"><p class="idx tnum">06</p><h3 class="t-name">Garments &amp; private label</h3><p class="t-txt">T-shirts, hoodies, track pants and uniforms — cut and sewn from our own fabric.</p>
+                <p class="t-moq"><span class="tnum">500</span> pieces minimum per T-shirt style</p></div>
+            </div>
+            <div class="face back">
+              <div class="sw sw-tee"><svg viewBox="0 0 300 190" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Back of a T-shirt with a neck label reading Your label">
+                <path d="M124 26 L104 32 L76 48 L88 74 L106 66 L106 170 L194 170 L194 66 L212 74 L224 48 L196 32 L176 26 Q150 34 124 26 Z" fill="url(#p-jf)" stroke="#EDEAE3" stroke-opacity=".5" stroke-width="1"/>
+                <rect x="131" y="34" width="38" height="15" rx="1.5" fill="#3F4CD9"/>
+                <text x="150" y="44.5" text-anchor="middle" font-family="Inter, sans-serif" font-size="7" font-weight="600" fill="#FFFFFF" letter-spacing=".5">YOUR LABEL</text>
+              </svg><span class="side">Back</span></div>
+              <div class="tb"><p class="idx tnum">06</p><h3 class="t-name" aria-hidden="true">Garments &amp; private label</h3><p class="t-txt">Private label under your brand — and home to our own label, <em>Pekaboo Clothing</em>.</p></div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ======================= 03 PROCESS ======================= -->
+  <section class="sec process" id="process" aria-labelledby="process-h">
+    <div class="wrap">
+      <p class="label">[03 — Process]</p>
+      <h2 class="h2" id="process-h">Yarn in. <span class="dim">Garment out.</span></h2>
+    </div>
+    <div class="wrap proc">
+      <div class="proc-pin" aria-hidden="true">
+        <div class="proc-stage">
+          <!-- One drawing per step; the active one is shown -->
+          <svg class="pv is-on" data-v="0" viewBox="0 0 240 200">
+            <path d="M90 168 L106 52 L134 52 L150 168 Q120 180 90 168 Z" fill="url(#g-yarn)" opacity=".9"/>
+            <g fill="none" stroke="#0E0F12" stroke-opacity=".35" stroke-width=".8"><path d="M104.6 64 Q120 69 135.4 64"/><path d="M103.3 71 Q120 76 136.7 71"/><path d="M102.0 78 Q120 83 138.0 78"/><path d="M100.8 85 Q120 90 139.2 85"/><path d="M99.5 92 Q120 97 140.5 92"/><path d="M98.3 99 Q120 104 141.7 99"/><path d="M97.0 106 Q120 111 143.0 106"/><path d="M95.7 113 Q120 118 144.3 113"/><path d="M94.5 120 Q120 125 145.5 120"/><path d="M93.2 127 Q120 132 146.8 127"/><path d="M92.0 134 Q120 139 148.0 134"/><path d="M90.7 141 Q120 146 149.3 141"/><path d="M89.4 148 Q120 153 150.6 148"/><path d="M88.2 155 Q120 160 151.8 155"/><path d="M86.9 162 Q120 167 153.1 162"/></g>
+            <ellipse cx="120" cy="52" rx="14" ry="4" fill="#0E0F12" stroke="#EDEAE3" stroke-width="1.2"/>
+            <path class="ln" d="M82 182 H158"/>
+            <path class="ac" d="M134 56 C 160 52, 170 92, 196 86 S 220 72, 230 78"/></svg>
+          <svg class="pv" data-v="1" viewBox="0 0 240 200"><path class="ac" d="M6 56 C 24 56, 30 40, 40 44"/><rect x="40" y="30" width="160" height="140" rx="8" fill="url(#p-jf)"/><rect x="40" y="30" width="160" height="140" rx="8" class="frame"/></svg>
+          <svg class="pv" data-v="2" viewBox="0 0 240 200"><g class="ln">
+            <path d="M48 96 V170 H192 V96"/><path d="M40 96 H200"/></g>
+            <rect x="92" y="28" width="56" height="112" fill="url(#p-jf)" opacity=".85"/>
+            <rect x="92" y="100" width="56" height="40" fill="#3F4CD9" opacity=".78"/>
+            <path class="ac ln" d="M52 120 C 80 112, 160 128, 188 120"/></svg>
+          <svg class="pv" data-v="3" viewBox="0 0 240 200"><defs><clipPath id="cp-tee"><path d="M96 46 L80 52 L56 66 L66 88 L82 81 L82 158 L158 158 L158 81 L174 88 L184 66 L160 52 L144 46 Q120 62 96 46 Z"/></clipPath></defs>
+            <rect x="24" y="30" width="192" height="140" rx="4" fill="url(#p-jf)" opacity=".28"/>
+            <rect x="24" y="30" width="192" height="140" fill="url(#p-jf)" clip-path="url(#cp-tee)"/>
+            <path class="ac ln dash" d="M96 46 L80 52 L56 66 L66 88 L82 81 L82 158 L158 158 L158 81 L174 88 L184 66 L160 52 L144 46 Q120 62 96 46 Z"/></svg>
+          <svg class="pv" data-v="4" viewBox="0 0 240 200"><path d="M40 40 H116 V160 H40 Z" fill="url(#p-jf)" opacity=".8"/><path d="M124 40 H200 V160 H124 Z" fill="url(#p-jf)" opacity=".8"/>
+            <path class="ac ln stitch" d="M120 30 V170"/><g class="ln"><path d="M120 170 V188"/></g></svg>
+          <svg class="pv" data-v="5" viewBox="0 0 240 200"><g class="ln">
+            <path d="M44 84 L120 56 L196 84 L120 112 Z"/><path d="M44 84 V150 L120 178 V112"/><path d="M196 84 V150 L120 178"/></g>
+            <path d="M76 84 L120 68 L164 84 L120 100 Z" fill="url(#p-jf)"/>
+            <path d="M76 84 L120 68 L164 84 L120 100 Z" fill="none" stroke="#EDEAE3" stroke-opacity=".5"/>
+            <path class="ac-fill" d="M140 128 L176 115 V131 L140 144 Z"/></svg>
+        </div>
+        <ol class="proc-rail">
+          <li class="is-on"><span class="tnum">01</span>Yarn</li><li><span class="tnum">02</span>Knit</li><li><span class="tnum">03</span>Dye</li><li><span class="tnum">04</span>Cut</li><li><span class="tnum">05</span>Sew</li><li><span class="tnum">06</span>Pack</li>
+        </ol>
+        <div class="proc-bar"><span></span></div>
+      </div>
+      <ol class="proc-steps">
+        <li class="pstep" data-step="0"><p class="label">Step 01</p><h3>Yarn</h3><p>Every order starts as cotton yarn, ready for the knitting machines.</p></li>
+        <li class="pstep" data-step="1"><p class="label">Step 02</p><h3>Knit</h3><p>Cotton yarn is knitted into fabric — jersey, rib, interlock, fleece or terry.</p></li>
+        <li class="pstep" data-step="2"><p class="label">Step 03</p><h3>Dye</h3><p>Greige fabric is dyed and processed to the shade you approve.</p></li>
+        <li class="pstep" data-step="3"><p class="label">Step 04</p><h3>Cut</h3><p>Fabric is laid and cut into panels to your pattern.</p></li>
+        <li class="pstep" data-step="4"><p class="label">Step 05</p><h3>Sew</h3><p>Panels are sewn into the finished style.</p></li>
+        <li class="pstep" data-step="5"><p class="label">Step 06</p><h3>Pack</h3><p>Garments are checked, pressed, labelled and packed.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ======================= 04 BRANDS ======================= -->
+  <section class="sec brands" id="brands" aria-labelledby="brands-h">
+    <div class="wrap">
+      <p class="label">[04 — Produced for]</p>
+      <h2 class="h2 h2-sm" id="brands-h">Brands we’ve produced for.</h2>
+      <ul class="brand-list">
+        <li>WROGN</li><li>Puma</li><li>Wrangler</li>
+      </ul>
+      <p class="fine">Listed as text only. Names and trademarks belong to their owners.</p>
+    </div>
+  </section>
+
+  <!-- ======================= 05 NUMBERS ======================= -->
+  <section class="sec numbers" id="numbers" aria-labelledby="numbers-h">
+    <div class="wrap">
+      <p class="label">[05 — Numbers]</p>
+      <h2 class="h2" id="numbers-h">Minimums that fit a first order. <span class="dim">Ready to ship abroad.</span></h2>
+      <div class="stats">
+        <article class="stat">
+          <p class="s-k">Fabric MOQ</p>
+          <p class="s-v"><span class="tnum">250</span><span class="unit">kg</span></p>
+          <p class="s-c">Minimum per fabric order</p>
+        </article>
+        <article class="stat">
+          <p class="s-k">T-shirt MOQ</p>
+          <p class="s-v"><span class="tnum">500</span><span class="unit">pcs</span></p>
+          <p class="s-c">Minimum per T-shirt style</p>
+        </article>
+        <article class="stat">
+          <p class="s-k">Fabric weight</p>
+          <p class="s-v s-v--range"><span class="tnum">110–440</span><span class="unit">GSM</span></p>
+          <p class="s-c">Across single jersey, rib, interlock, fleece and terry</p>
+        </article>
+        <article class="stat">
+          <p class="s-k">Lead time</p>
+          <p class="s-v"><span class="tnum">14–30</span><span class="unit">days</span></p>
+          <div class="lead-bar" role="img" aria-label="Lead time window from day 14 to day 30 after order confirmation, to be confirmed"><span class="lb-win"></span><span class="lb-l tnum">0</span><span class="lb-a tnum">14</span><span class="lb-r tnum">30</span></div>
+          <p class="s-c"><span class="ph">[to confirm]</span> Placeholder range</p>
+        </article>
+        <article class="stat stat-wide">
+          <p class="s-k">Export ready</p>
+          <p class="s-v"><span>IEC</span><span class="unit">holder</span></p>
+          <p class="s-c">We supply brands, D2C labels, garment factories, private label buyers and wholesalers worldwide.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= 06 QUOTE ======================= -->
+  <section class="sec quote" id="quote" aria-labelledby="quote-h">
+    <div class="wrap quote-grid">
+      <div>
+        <p class="label">[06 — Quote]</p>
+        <h2 class="h2" id="quote-h">Request a quote. <span class="dim">Tell us the fabric or the garment.</span></h2>
+        <dl class="facts contact">
+          <div><dt>Contact</dt><dd><span class="ph">[email / WhatsApp to confirm]</span></dd></div>
+          <div><dt>LinkedIn</dt><dd><a class="link" href="https://www.linkedin.com/in/srinivasan-natarajan-b3731780/" target="_blank" rel="noopener">Srinivasan Natarajan <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a></dd></div>
+          <div><dt>Location</dt><dd>Tiruppur, Tamil Nadu, India</dd></div>
+        </dl>
+      </div>
+      <form class="form" id="quoteForm" novalidate>
+        <div class="field"><label for="f-name">Name <span class="req">(required)</span></label><input id="f-name" name="name" autocomplete="name" required></div>
+        <div class="row2">
           <div class="field"><label for="f-company">Company</label><input id="f-company" name="company" autocomplete="organization"></div>
           <div class="field"><label for="f-country">Country</label><input id="f-country" name="country" autocomplete="country-name"></div>
+        </div>
+        <div class="row2">
           <div class="field"><label for="f-product">Product</label>
             <select id="f-product" name="product">
               <option value="">Select…</option>
@@ -263,12 +414,13 @@
               <optgroup label="Garment"><option>T-shirts</option><option>Hoodies</option><option>Track pants</option><option>Uniforms</option><option>Private label</option></optgroup>
             </select></div>
           <div class="field"><label for="f-qty">Quantity</label><input id="f-qty" name="quantity" placeholder="e.g. 500 pcs or 250 kg"></div>
-          <button class="btn btn-full" type="submit"><span class="anchor" data-a="v" data-dot></span>Request a quote</button>
-          <p class="form-status" id="formStatus" role="status"></p>
-        </form>
-      </div>
-    </section>
-  </div>
+        </div>
+        <label class="check"><input type="checkbox" id="f-samples" name="samples"><span class="box" aria-hidden="true"></span><span>I’d like fabric samples</span></label>
+        <button class="btn btn-full" type="submit">Request a quote</button>
+        <p class="form-status" id="formStatus" role="status"></p>
+      </form>
+    </div>
+  </section>
 </main>
 
 <footer class="foot">
@@ -278,11 +430,15 @@
       <span class="wm-sub">Tiruppur, India</span>
     </div>
     <p class="fine">Dhiyasri Apparels · Cotton knit fabric &amp; garments · IEC holder · Own label: Pekaboo Clothing</p>
-    <p class="fine"><a class="link" href="https://www.linkedin.com/in/srinivasan-natarajan-b3731780/" target="_blank" rel="noopener">LinkedIn ↗</a> · <span class="ph">[email / WhatsApp to confirm]</span></p>
+    <p class="fine"><a class="link" href="https://www.linkedin.com/in/srinivasan-natarajan-b3731780/" target="_blank" rel="noopener">LinkedIn <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a> · <span class="ph">[email / WhatsApp to confirm]</span></p>
   </div>
 </footer>
 
-<script src="fallback.js"></script>
-<script type="module" src="main.js"></script>
+<a class="fab" id="fab" href="#quote" data-samples>
+  <svg viewBox="0 0 20 20" aria-hidden="true"><rect x="3" y="4" width="14" height="12" rx="1.5" fill="url(#p-jf)" stroke="currentColor" stroke-width="1.2"/></svg>
+  Request samples
+</a>
+
+<script src="main.js" defer></script>
 </body>
 </html>
